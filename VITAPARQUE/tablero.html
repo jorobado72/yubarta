@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de control Vita Parque</title>
+
+    <link rel="stylesheet" href="tablero.css">
+    <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+    <header>
+        <div id="logo"><img src="vitaparque_logo.jpg" alt="logo vita parque" height="120px">
+        </div> 
+        <div class="marquee" onclick="editMarquee()" style="display: block;"><p id="marquee_txt">Test de mensajes </p></div>
+        
+    </header>
+    <main>
+    <div id="marcador_team1" >0</div>
+    
+    <div class="cronometro">		
+        <div id="numbers"><div id="screen">00:00</div></div>
+    </div>
+       
+		
+	</div>
+    <div id="marcador_team2">0</div> 
+    </main>
+    
+    <div id="container_marcador">
+        
+        <div id="nombre_team1">
+            <div id="display_team_1" onclick="editNameTeam1()" style="display: block;">Equipo 1
+            </div>
+            <div id="input_team_1" style="display:none;">
+            <input id="tx_input_team_1" type="text" size="30"/>
+            </div>
+        </div>
+        
+        <div id="vs">vs</div>
+        
+        <div id="nombre_team2" >
+            <div id="display_team_2" onclick="editNameTeam2()" style="display: block;">Equipo 2
+            </div>
+            <div id="input_team_2" style="display:none;">
+            <input id="tx_input_team_2" type="text" size="30"/>
+            </div>
+        </div>
+        
+        
+    </div>
+   
+    
+    <div id="container_buttons">
+        <div id="setscore1">
+            <div class="buttons">
+                
+                <button class="goalbtn" id="btn_gol_plus_t1" onclick="sumarPuntuacion('marcador_team1',1)">+</button>
+                <button class="goalbtn" id="btn_gol_min_t1"  onclick="sumarPuntuacion('marcador_team1',-1)">-</button>
+            </div>
+        </div>
+        
+
+        <div id="settime">
+            <div class="buttons">            
+            <input type="number" id="tiempo" value="0" width="30px"></div>
+            <button class="emerald" id="btn_startStopResume" onclick="startStopResume()">Start &#9658;</button>
+                <!-- <button class="emerald" onclick="start()">START &#9658;</button>
+                <button class="emerald" onclick="stop()">STOP &#8718;</button>
+                <button class="emerald" onclick="resume()" >RESUME &#8634;</button> -->
+            <button class="emerald" onclick="reset()">RESET &#8635;</button>
+            </div>
+            
+            <div id="setscore2">
+            <div class="buttons">
+                
+                <button class="goalbtn" id="btn_gol_plus_t2" onclick="sumarPuntuacion('marcador_team2',1)">+</button>
+                <button class="goalbtn" id="btn_gol_min_t2"  onclick="sumarPuntuacion('marcador_team2',-1)">-</button>
+            </div>
+        </div>
+    </div>
+    <div is="containerGol">
+        <div id="gol" style="height: 100%; width: 100%;"onclick="salirGol()">GOL!!!</div>
+    </div>
+    <script src="tablero.js" ></script>
+</body>
+</html>
